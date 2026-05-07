@@ -1,0 +1,37 @@
+random_seed: 42
+
+mcq:
+  temperature: 0
+  max_tokens: 50
+  sleep_between_calls: 0.1
+  max_retries: 5
+  retry_delay: 10
+  batch_save: 50
+
+openended:
+  temperature: 0
+  max_tokens: 50
+  sleep_between_calls: 0.1
+  max_retries: 5
+  retry_delay: 10
+  batch_save: 50
+
+judge:
+  model: gpt-4o-mini
+  temperature: 0
+  max_tokens: 5
+
+local_models:
+  sleep_between_batches: 0.1
+  batch_sizes:
+    causal_7b_8b: 128
+    qwen3_32b: 16
+    qwq_32b: 8
+    r1_distill_32b: 8
+    gemma_27b: 2
+    medgemma_27b: 2
+
+tier_thresholds:
+  T1: 0.70
+  T2: 0.40
+  T3: 0.10

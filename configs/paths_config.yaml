@@ -1,0 +1,33 @@
+# Update these paths to match your local setup.
+# All paths can be overridden by passing arguments directly to scripts.
+
+project_folder: ~/BioChem_XDR
+
+data:
+  full:     ${project_folder}/biochem_xdr_full.json
+  verified: ${project_folder}/biochem_xdr_verified.json
+  gold:     ${project_folder}/biochem_xdr_gold.json
+
+kg:
+  output: ${project_folder}/kg/
+
+generation:
+  output: ${project_folder}/generation_outputs/
+
+evaluation:
+  mcq_results:  ${project_folder}/evaluation_results/
+  cooc_results: ${project_folder}/cooccurrence_results/
+  gold_results: ${project_folder}/evaluation_results_gold/
+
+tiers:
+  calibrated_csv: ${project_folder}/analysis_outputs/tier_aggregate_calibrated.csv
+
+analysis:
+  output: ${project_folder}/analysis_outputs/
+
+figures:
+  output: ${project_folder}/figures/
+
+gold:
+  expert_sheets: ${project_folder}/gold_export/expert_sheets/
+  answer_key:    ${project_folder}/gold_export/expert_sheets/PRIVATE_answer_key.xlsx
