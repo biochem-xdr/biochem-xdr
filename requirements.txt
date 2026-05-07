@@ -1,0 +1,32 @@
+# API clients
+openai>=1.0.0
+anthropic>=0.20.0
+google-genai>=0.8.0
+together>=0.2.0
+
+# Local model inference
+transformers>=4.42.0
+torch>=2.0.0
+accelerate>=0.27.0
+
+# Dataset and data handling
+datasets>=2.18.0
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+
+# Analysis and stats
+scipy>=1.11.0
+statsmodels>=0.14.0
+
+# KG construction
+networkx>=3.1
+requests>=2.31.0
+bioservices>=1.11.0
+
+# Figures
+matplotlib>=3.8.0
+
+# Utilities
+tqdm>=4.66.0
+python-dotenv>=1.0.0
