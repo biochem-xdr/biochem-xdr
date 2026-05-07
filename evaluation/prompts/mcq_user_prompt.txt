@@ -1,0 +1,7 @@
+Question:
+{question}
+
+Answer choices:
+{choices_text}
+
+Reply with ONLY the letter of your answer (A, B, C, or D). Nothing else.

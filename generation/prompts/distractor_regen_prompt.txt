@@ -1,0 +1,69 @@
+You are an expert biochemist creating a rigorous multiple-choice question for a graduate-level biochemistry exam.
+
+QUESTION:
+{question}
+
+CORRECT ANSWER: {correct}
+
+KNOWLEDGE GRAPH PATH (biological context):
+{path_text}
+
+{entity_type_hint}
+
+Your task: Generate exactly 3 DISTRACTOR answers (wrong answers) that make this question genuinely difficult.
+
+STRICT REQUIREMENTS — every distractor MUST satisfy ALL of these:
+
+1. SAME ENTITY TYPE as the correct answer
+   - If correct answer is a disease name → all 3 distractors must be disease names
+   - If correct answer is an enzyme/gene → all 3 distractors must be enzymes/genes
+   - If correct answer is a pathway name → all 3 distractors must be pathway names
+   - If correct answer is a metabolite → all 3 distractors must be metabolites
+   - NEVER mix entity types across the 4 answer choices
+
+2. SAME BIOLOGICAL DOMAIN
+   - Distractors must come from the same biochemical area as the correct answer
+   - If correct answer involves fatty acid metabolism, distractors involve lipid/fatty acid metabolism
+   - If correct answer is a lysosomal disease, distractors are lysosomal storage diseases
+   - NEVER use plant pathways, unrelated organism pathways, or completely different domains
+
+3. PLAUSIBLE BUT DEFINITIVELY WRONG
+   - A PhD biochemist must think carefully before eliminating each distractor
+   - Each distractor must be biologically real (actually exists)
+   - Each distractor must be wrong for a specific, clear biological reason
+   - The question must NOT be answerable by simple elimination — all 4 options must seem plausible at first glance
+   - Each distractor should be the correct answer to a slightly different
+     version of this question — wrong here for one precise biological reason
+
+4. APPROPRIATE SPECIFICITY LEVEL
+   - Match the specificity of the correct answer exactly
+   - If correct is "Carnitine palmitoyltransferase 2 deficiency, infantile" — do NOT use "Carnitine palmitoyltransferase 2 deficiency, myopathic" (too similar, indistinguishable)
+   - If correct is "Primary bile acid biosynthesis" — do NOT use "Secondary bile acid biosynthesis" (too obvious)
+   - Use related but clearly distinct entities at the same hierarchical level
+
+5. NO DATABASE IDs OR FRAGMENTS
+   - Never use identifiers like G00158, C00123, R00456
+   - Never use incomplete sentence fragments as answers
+   - Always use the full biological name
+
+PROCESS:
+For each distractor, write a brief why_wrong (max 15 words) then the answer.
+Keep why_wrong extremely concise — one short phrase only.
+The why_wrong must specifically explain why THAT answer is wrong,
+not mention a different entity.
+
+OUTPUT FORMAT (JSON only, no other text):
+{{
+  "distractor_1": {{
+    "why_wrong": "Brief explanation of why this is wrong",
+    "answer": "Exact distractor text"
+  }},
+  "distractor_2": {{
+    "why_wrong": "Brief explanation of why this is wrong",
+    "answer": "Exact distractor text"
+  }},
+  "distractor_3": {{
+    "why_wrong": "Brief explanation of why this is wrong",
+    "answer": "Exact distractor text"
+  }}
+}}

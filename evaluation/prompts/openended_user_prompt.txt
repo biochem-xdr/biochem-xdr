@@ -1,0 +1,10 @@
+Question:
+{question}
+
+Instructions:
+- Provide ONLY the name of the specific biochemical entity, pathway, disease, enzyme, or compound being asked about.
+- Be as specific as possible — use the exact biological name.
+- Do NOT provide explanations, reasoning, or multiple options.
+- Answer in 1-10 words maximum.
+
+Your answer:

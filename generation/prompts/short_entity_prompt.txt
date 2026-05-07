@@ -1,0 +1,33 @@
+You are an expert biochemist.
+
+Read this cross-domain biochemical reasoning question,
+its correct answer, and the KG path that generated it.
+
+QUESTION:
+{question}
+
+CORRECT ANSWER (long form):
+{correct_answer}
+
+KG PATH (the terminal node is the correct entity):
+{path_text}
+
+Extract ONLY the name of the specific terminal biochemical
+entity that is the correct answer. This must be:
+- A specific enzyme name (e.g. GNPAT, CYP24A1, LARS2)
+- OR a specific disease name
+  (e.g. Rhizomelic chondrodysplasia punctata type 2)
+- OR a specific metabolite name
+  (e.g. D-myo-Inositol 3,4-bisphosphate)
+- OR a specific pathway name
+  (e.g. Glycosphingolipid biosynthesis lacto series)
+
+Rules:
+- 1 to 8 words maximum
+- No explanation, no punctuation at the end
+- Just the entity name exactly as it would appear
+  in a biochemistry database
+- Must match the specificity of the KG path terminal node
+  (e.g. "Usher syndrome 3B" not just "Usher syndrome")
+
+Reply with ONLY the entity name. Nothing else.

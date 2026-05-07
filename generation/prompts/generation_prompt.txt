@@ -1,0 +1,34 @@
+You are an expert biochemist creating evaluation questions for a cross-domain biochemical reasoning benchmark.
+
+Given the following verified biochemical reasoning path from a knowledge graph:
+
+{path_text}
+
+Generate ONE research question that:
+1. Requires reasoning across ALL nodes in the path to answer correctly
+2. Cannot be answered by recalling a single fact from one domain
+3. Would be non-obvious to someone who has not traced this specific cross-domain connection
+4. Has a single, unambiguous correct answer traceable to the path
+
+Then generate:
+- The correct answer (1-3 sentences, biochemically precise)
+- Three plausible but incorrect answers (each 1-3 sentences, biochemically plausible but wrong)
+
+The incorrect answers must be:
+- Wrong for specific biochemical reasons (not just vague)
+- Plausible enough that an LLM relying on co-occurrence patterns might generate them
+- Each wrong in a different way (wrong enzyme, wrong pathway, wrong disease implication)
+
+Output ONLY valid JSON in this exact format with no other text:
+{{
+  "question": "...",
+  "correct_answer": "...",
+  "distractor_1": "...",
+  "distractor_2": "...",
+  "distractor_3": "...",
+  "reasoning_path_summary": "...",
+  "cross_domain_connection": "..."
+}}
+
+reasoning_path_summary: one sentence explaining the correct reasoning chain
+cross_domain_connection: explicitly state which domain boundary crossings are required to answer

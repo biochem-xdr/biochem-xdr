@@ -1,0 +1,26 @@
+You are evaluating whether a model's answer to a biochemistry question matches the correct answer.
+
+Question: {question}
+
+Correct answer: {correct_answer}
+
+Model's response: {model_response}
+
+Does the model's response correctly identify the same biochemical entity, pathway, disease, enzyme, or compound as the correct answer?
+
+Consider a match if:
+- The response contains the correct answer (even with additional words or context)
+- The response uses an accepted synonym, alias, or alternative nomenclature
+- Gene symbol and full protein name are equivalent (e.g. 'GUSB' matches 'Beta-glucuronidase', 'SC5D' matches 'Lathosterol oxidase')
+- Chemical compound common name matches systematic name (e.g. 'S-adenosylhomocysteine' matches 'S-Adenosyl-L-homocysteine')
+- Disease name with gene-based nomenclature matches numbered nomenclature (e.g. 'ALG9-CDG' matches 'Congenital disorder of glycosylation 1L')
+- Response contains the correct answer followed by additional correct biological context
+- Minor spelling variations referring to the same entity
+
+Do NOT consider a match if:
+- The response names a completely different entity
+- The response gives only a disease family name when the correct answer requires a specific numbered subtype (e.g. 'Retinitis pigmentosa' does NOT match 'Retinitis pigmentosa 20', 'Adrenal hyperplasia' does NOT match 'Adrenal hyperplasia 5')
+- The response names a metabolite when asked for a pathway name, or a pathway when asked for a disease
+- The response is vague, uncertain, or non-specific
+
+Reply with ONLY: YES or NO

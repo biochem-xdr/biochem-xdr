@@ -1,0 +1,33 @@
+You are an expert biochemist.
+
+The correct answer to this cross-domain biochemistry
+question is: {correct_entity}
+
+QUESTION: {question}
+
+Generate exactly 3 wrong answer choices following
+these strict rules:
+
+1. Same entity type as the correct answer
+   - If correct is a disease: all wrong are diseases
+   - If correct is an enzyme: all wrong are enzymes
+   - If correct is a metabolite: all wrong are metabolites
+   - If correct is a pathway: all wrong are pathways
+
+2. Same specificity level as correct answer
+   - If correct is "Usher syndrome 3B": wrong answers
+     must also be specific subtypes like
+     "Usher syndrome 2A", not just "Usher syndrome"
+   - If correct is "GNPAT": wrong answers are
+     specific enzymes like "AGPS", "DHRS7B", not
+     broad categories
+
+3. Real biochemical entities — not invented
+
+4. Plausible — a model without path knowledge
+   should find all four options believable
+
+5. Short — 1 to 8 words each
+
+Reply ONLY with a valid JSON list of exactly 3 strings:
+["wrong entity 1", "wrong entity 2", "wrong entity 3"]
